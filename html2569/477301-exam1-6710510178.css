@@ -3,11 +3,12 @@ body {
     padding: 0;
     font-family: 'Bai Jamjuree', sans-serif;
     font-size: 1.5rem;
+    background-color: #85beb7;
 }
 
 .section1 {
     margin: 20px;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #3b5564;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -16,12 +17,20 @@ body {
 
 .section2 {
     margin: 20px;
-    padding: 20px;
+    padding: 10px;
     max-width: 500px;
     border: 1px solid #3b5564;
     border-radius: 5px;
     background-color: #e0f7fa;
     box-shadow: #3b5564;
+}
+
+fieldset {
+    border: 1px solid #3b5564;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
 }
 
 form {
@@ -35,8 +44,8 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: azure;
     border: 1px solid #3b5564;
+    background-color: azure;
 }
 
 img {
@@ -45,4 +54,12 @@ img {
     max-width: 100%;
     height: auto;
     align-items: center;
+}
+
+.card {
+    border: 1px solid #3b5564;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
 }
