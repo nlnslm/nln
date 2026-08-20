@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid_try</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 20px;
+            background-color: rgb(144, 195, 207);
+        }
+        .grid-container div {
+            background-color: #c2dcff;
+            color: rgb(36, 63, 87);
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+    </div>
+</body>
+</html>
