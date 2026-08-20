@@ -55,11 +55,3 @@ img {
     height: auto;
     align-items: center;
 }
-
-.card {
-    border: 1px solid #3b5564;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #f1f1f1;
-}
