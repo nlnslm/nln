@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <script src="grade.js"></script>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <label for="score">Enter your score:</label>
+    <input type="number" id="score" placeholder="Enter score">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <p id="result"></p>
+    <script>
+        let score = prompt("Enter your score:");
+        let ret_grade = calculateGrade(score);
+        document.write("Your grade is: " + ret_grade);
+    </script>
+</body>
+</html>
