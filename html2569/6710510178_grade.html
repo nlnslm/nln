@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Calculator</title>
     <script src="grade.js"></script>
+    <script>
+        fruite = ["apple", "banana", "cherry"];
+        document.write("<br>Fruite: " + fruite);
+    </script>
+    <script>
+        student = {
+            name: "Nalinee",
+            age: 20,
+            std_major: "Business Information Systems"
+        }
+        document.write("<br>Student: " + student.name + ", Name: " + student.name);
+        document.write("<br>Student: " + student.name + ", Age: " + student.age);
+        document.write("<br>Student: " + student.name + ", Major: " + student.std_major);
+    </script>
 </head>
 <body>
     <h1>Grade Calculator</h1>
@@ -16,6 +30,13 @@
         let score = prompt("Enter your score:");
         let ret_grade = calculateGrade(score);
         document.write("Your grade is: " + ret_grade);
+    </script>
+    <script>
+        printName();
+        let ret_total = totalPrice(10, 20);
+        document.write("<br>Total Price: " + ret_total);
+        let ret_totalWithTax = totalPriceWithTax(10, 20, 0.07);
+        document.write("<br>Total Price with Tax: " + ret_totalWithTax);
     </script>
 </body>
 </html>
