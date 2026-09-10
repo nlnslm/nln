@@ -4,10 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Calculator</title>
+    <script>
+        /*
+          this is a multi-line comment in JavaScript
+        */
+        let message = "Hello, World!";
+        let message2 = "welcome to JavaScript!";
+        alert(message);
+        document.write(message + " " + message2);
+        console.log(message);
+ 
+        let number1 = "10";
+        let number2 = 10;
+        // Comparison using == operator
+        if (number1 == number2) {
+            console.log("The numbers are equal.");
+        } else {
+            console.log("The numbers are not equal.");
+        }
+ 
+        // Comparison using === operator
+        if (number1 === number2) {
+               console.log("The numbers are strictly equal.");
+           } else {
+               console.log("The numbers are not strictly equal.");
+           }
+    </script>
     <script src="grade.js"></script>
     <script>
         fruite = ["apple", "banana", "cherry"];
         document.write("<br>Fruite: " + fruite);
+    </script>
+    <script>
+           //array of fruits
+       fruits = ["Apple", "Papaya", "Banana", "Orange "];
+       document.write("<br>Fruits: " + fruits);
+       //loop with for loop to display each fruit
+       for (let i = 0; i < fruits.length; i++) {
+           document.write("<br>Fruit " + (i + 1) + ": " + fruits[i]);
+       }
+       //loop with while loop to display each fruit
+       let i = 0;
+       while (i < fruits.length) {
+           document.write("<br>Fruit " + (i + 1) + ": " + fruits[i]);
+           i++;
+       }
+       //loop with do while loop to display each fruit
+       let j = 0;
+       do {
+           document.write("<br>Fruit " + (j + 1) + ": " + fruits[j]);
+           j++;
+       } while (j < fruits.length);
     </script>
     <script>
         student = {

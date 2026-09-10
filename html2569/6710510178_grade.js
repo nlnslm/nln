@@ -1,11 +1,12 @@
-function calculateGrade() {
-    var input = document.getElementById("score");
-    var score = input ? parseFloat(input.value) : NaN;
-    var grade = "F";
+function calculateGrade(score) {
+    score = Number(score);
+    if (Number.isNaN(score)) {
+        console.error("Invalid score:", score);
+        return null;
+    }
 
-    if (isNaN(score)) {
-        grade = "Invalid";
-    } else if (score >= 80) {
+    let grade;
+    } if (score >= 80) {
         grade = "A";
     } else if (score >= 75) {
         grade = "B";
@@ -17,19 +18,13 @@ function calculateGrade() {
         grade = "D+";
     } else if (score >= 55) {
         grade = "D";
-    } else if (score >= 50) {
-        grade = "E";
     } else {
-        grade = "F";
+        grade = "E";
     }
 
-    console.log("Score:", score, "Grade:", grade);
-
-    var out = document.getElementById("grade");
-    if (out) out.textContent = grade;
-
+    console.log("Grade:", grade);
     return grade;
-}
+
 function printName() {
     let name = "Nalinee";
     console.log("Name:", name);
