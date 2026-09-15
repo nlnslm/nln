@@ -8,17 +8,58 @@
 <body>
     <button id="myButton">ลองกดแล</button>
     <div id="output"></div>
+    <div id = "content" onmouseover = "changeContent()" onmouseout = "resetContent()" >มีสีจ่ะ</div>
+    <button id = "resetButton">รีเซ็ตเนื้อหา</button>
+
+    <ol id = "coffee-menu">
+        <li>Espresso</li>
+        <li>Cappuccino</li>
+        <li>Latte</li>
+    </ol>
+    <button id = "menuButton">แสดงเมนู</button>
+
     <script>
+        function showMenu() {
+            let menu = document.getElementById("coffee-menu");
+            let menuList = document.getElementById("menuButton");
+            menuList.textContent = "Cream";
+            menu.appendChild(menuList);
+            menu.style.display = "block";
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
         let button = document.getElementById("myButton");
         let output = document.getElementById("output");
+        let menuButton = document.getElementById("menuButton");
+        let coffeeMenu = document.getElementById("coffee-menu");
+
         button.addEventListener("click", function() {
             output.innerHTML = "พันพรื่อ!";
         });
 
+        menuButton.addEventListener("click", function() {
+            coffeeMenu.style.display = coffeeMenu.style.display === "none" ? "block" : "none";
+        });
+
         function changeContent() {
             let content = document.getElementById("content");
-            content.innerHTML = "เนื้อหาถูกเปลี่ยนแล้ว!";
+            content.innerHTML = "สีเหลืองงงงงงงงงงง!";
+            content.style.backgroundColor = "yellow";
+            content.style.color = "blue";
         }
+
+        function resetContent() {
+            let content = document.getElementById("content");
+            content.innerHTML = "นี่คือเนื้อหาเริ่มต้น";
+            content.style.backgroundColor = "";
+            content.style.color = "";
+            content.style.removeProperty("background-color");
+        }
+
     </script>
 </body>
 </html>
