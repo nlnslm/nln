@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <button id="myButton">ลองกดแล</button>
+    <div id="output"></div>
+    <script>
+        let button = document.getElementById("myButton");
+        let output = document.getElementById("output");
+        button.addEventListener("click", function() {
+            output.innerHTML = "พันพรื่อ!";
+        });
+
+        function changeContent() {
+            let content = document.getElementById("content");
+            content.innerHTML = "เนื้อหาถูกเปลี่ยนแล้ว!";
+        }
+    </script>
+</body>
+</html>

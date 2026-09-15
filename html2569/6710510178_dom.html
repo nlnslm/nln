@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM</title>
+</head>
+<body>
+    <h2 id="title">JavaScript DOM</h2>
+    <div class="content"></div>
+    <script>
+        let title = document.getElementById("title");
+        title.style.color = "blue";
+        title.innerHTML = "JavaScript DOM Manipulation";
+        let content = document.querySelector(".content");
+        content.innerHTML = "This is a sample content.";
+        content[1].innerHTML = "This is the second content.";
+        content[1].style.color = "green";
+    </script>
+</body>
+</html>

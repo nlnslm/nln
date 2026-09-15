@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        const vat = 0.07; // Value Added Tax
+        // Function to calculate the total order amount including VAT
+        function orderCalculater(price, quantity) {
+            let total = price * quantity;
+total += total * vat; // Add VAT to the total
+        return total;
+    }
+ 
+    // Function to calculate the total order amount including delivery fee
+    // memberStatus is a boolean indicating if the customer is a premium member
+    function deliveryCalculator(totalPrice, memberStatus) {
+        let deliveryFee = 0;
+        if (totalPrice > 500) {
+            deliveryFee = 0; // Free delivery for orders over $500
+        } else if (memberStatus) {
+            deliveryFee = 30; // Free delivery for premium members
+           
+        } else {
+            deliveryFee = 50; // Standard delivery fee
+        }
+        return deliveryFee
+    }
+ 
+    //product #1
+    let product1 = {
+        name: "Laptop",
+        price: 1000,
+        quantity: 2
+    };
+    //product #2
+    let product2 = {
+        name: "Smartphone",
+        price: 500,
+        quantity: 1
+    };
+ 
+    // display order details for product #1
+    document.write("<h2>Order Details for Product 1</h2>");
+    document.write("<p>Name: " + product1.name + "</p>");
+    document.write("<p>Price: $" + product1.price + "</p>");
+    document.write("<p>Quantity: " + product1.quantity + "</p>");
+    document.write("<p>Subtotal: $" + (product1.price * product1.quantity).toFixed(2) + "</p>");
+    document.write("<p>Total + Vat: $" + orderCalculator(product1.price, product1.quantity).toFixed(2) + "</p>");
+ 
+    // display order details for product #2
+    document.write("<h2>Order Details for Product 2</h2>");
+    document.write("<p>Name: " + product2.name + "</p>");
+    document.write("<p>Price: $" + product2.price + "</p>");
+    document.write("<p>Quantity: " + product2.quantity + "</p>");
+    document.write("<p>Subtotal: $" + (product2.price * product2.quantity).toFixed(2) + "</p>");
+    document.write("<p>Total + Vat: $" + orderCalculator(product2.price, product2.quantity).toFixed(2) + "</p>");
+ 
+    // display total delivery fee
+    let totalPrice = orderCalculator(product1.price, product1.quantity) + orderCalculator(product2.price, product2.quantity);
+    let memberStatus = true; // Assume the customer is a premium member
+    document.write("<h2>Delivery Fee</h2>");
+    document.write("<p>Total Price: $" + totalPrice.toFixed(2) + "</p>");
+    document.write("<p>Delivery Fee: $" + deliveryCalculator(totalPrice, memberStatus).toFixed(2) + "</p>");
+    </script>
+</body>
