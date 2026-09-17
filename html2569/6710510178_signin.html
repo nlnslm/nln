@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .login-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+        }
+
+        .login-header {
+            background: #66340c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row min-vh-100 align-items-center justify-content-center">
+            <div class="col-md-5 col-lg-4">
+                <div class="card login-card border-0">
+                    <div class="login-header text-center py-4">
+                        <h3 class="mb-0">Sign In</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                        </form>
+
+                        <p class="text-center mt-3 mb-0">
+                            <small>Don't have an account? <a href="#">Sign up</a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        // Function to validate email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+                email.setCustomValidity('Please enter a valid email address.');
+            } else {
+                email.setCustomValidity(''); // Clear any previous error message
+            }
+        }
+
+        // Function to validate password
+        function validatePassword(password) {
+            if (password.value.trim() === '') {
+                password.setCustomValidity('Password cannot be empty.');
+            } else if (password.value.length < 6) {
+                password.setCustomValidity('Password must be at least 6 characters long.');
+            } else {
+                password.setCustomValidity('');
+            }
+        }
+
+        // Add event listeners for input validation
+        email.addEventListener('input', function() {
+            const emailValue = email.value;
+            if (!validateEmail(emailValue)) {
+                email.setCustomValidity('Please enter a valid email address.');
+            } else {
+                email.setCustomValidity('');
+            }
+        });
+
+        // Add event listener for password validation
+        password.addEventListener('input', function() {
+            const passwordValue = password.value;
+            if (passwordValue.length < 6) {
+                password.setCustomValidity('Password must be at least 6 characters long.');
+            } else {
+                password.setCustomValidity('');
+            }
+        });
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (you can enhance this)
+            if (email && password) {
+                alert(`Email: ${email}\nPassword: ${password}`);
+                // Here you can add your logic to handle sign-in, e.g., send data to server
+            } else {
+                alert('Please fill in both fields.');
+            }
+        });
+    </script>
+</body>
+</html>

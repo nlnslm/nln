@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<body>
+    <button id="add">Add</button>
+    <div id="count" class="cntNum">0</div>
+    <script>
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+            let resetButton = document.querySelector('#reset');
+            resetButton.addEventListener('click', function() {
+                count = 0;
+                localStorage.setItem('count', count);
+                countDiv.textContent = count;
+            });
+
+            addButton.addEventListener('click', function() {
+                count++;
+                countDiv.textContent = count;
+            });
+    </script>
+</body>
+</html>
