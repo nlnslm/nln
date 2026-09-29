@@ -7,6 +7,20 @@
 </head>
 <body>
     <?php
+       if (isset($_GET['query']) && $_GET['query'] !== '') {
+           echo '<p>Search result for: ' . htmlspecialchars($_GET['query']) . '</p>';
+       }
+
+       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username'])) {
+           $username = htmlspecialchars(trim($_POST['username']));
+           $password = htmlspecialchars(trim($_POST['password']));
+           if ($username === '' || $password === '') {
+               echo '<p>Please enter both username and password.</p>';
+           } else {
+               echo '<p>Login successful for user: ' . $username . '</p>';
+           }
+       }
+
        echo "this is index.php inside week10 folder. ";
        echo "<br>";
        $name = "Nalinee";
@@ -17,47 +31,47 @@
 
        //get the current time
        switch (date("l")) {
-        case "Monday":
-            echo "วันจันทร์";
-            break;
-        case "Tuesday":
-            echo "วันอังคาร";
-            break;
-        case "Wednesday":
-            echo "วันพุธ";
-            break;
-        case "Thursday":
-            echo "วันพฤหัสบดี";
-            break;
-        case "Friday":
-            echo "วันศุกร์";
-            break;
-        case "Saturday":
-            echo "วันเสาร์";
-            break;
-        case "Sunday":
-            echo "วันอาทิตย์";
-            break;
-        default:
-            echo "วันอื่นๆ";
-            break;
-       }
+            case "Monday":
+                echo "วันจันทร์";
+                break;
+            case "Tuesday":
+                echo "วันอังคาร";
+                break;
+            case "Wednesday":
+                echo "วันพุธ";
+                break;
+            case "Thursday":
+                echo "วันพฤหัสบดี";
+                break;
+            case "Friday":
+                echo "วันศุกร์";
+                break;
+            case "Saturday":
+                echo "วันเสาร์";
+                break;
+            case "Sunday":
+                echo "วันอาทิตย์";
+                break;
+            default:
+                echo "วันอื่นๆ";
+                break;
+        }
 
        //array of month names in Thai
-       $thai_months = array(
-        "01" => "มกราคม",
-        "02" => "กุมภาพันธ์",
-        "03" => "มีนาคม",
-        "04" => "เมษายน",
-        "05" => "พฤษภาคม",
-        "06" => "มิถุนายน",
-        "07" => "กรกฎาคม",
-        "08" => "สิงหาคม",
-        "09" => "กันยายน",
-        "10" => "ตุลาคม",
-        "11" => "พฤศจิกายน",
-        "12" => "ธันวาคม"
-       );
+        $thai_months = array(
+            "01" => "มกราคม",
+            "02" => "กุมภาพันธ์",
+            "03" => "มีนาคม",
+            "04" => "เมษายน",
+            "05" => "พฤษภาคม",
+            "06" => "มิถุนายน",
+            "07" => "กรกฎาคม",
+            "08" => "สิงหาคม",
+            "09" => "กันยายน",
+            "10" => "ตุลาคม",
+            "11" => "พฤศจิกายน",
+            "12" => "ธันวาคม"
+        );
 
        //get output data in Thai format
        echo "ที่" . date("d") . "เดือน " . $thai_months[date("m")] . "พ.ศ. " . (date("Y") + 543) . ".";
@@ -120,11 +134,27 @@
     ?>
 
     <!-- ใช้ method=get กับข้อมูลที่ไม่ sensitive -->
-       <form action="search.php" method="get">
-            <label for="query">Search:</label>
-            <input type="text" id="query" name="query">
-            <input type="submit" value="Search">
-       </form>
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
+        <label for="query">Search:</label>
+        <input type="text" id="query" name="query">
+        <input type="submit" value="Search">
+    </form>
+    <br>
+
+    <div>
+        <h3>Login</h3>
+    </div>
+
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+
 </body>
 </html>
  
