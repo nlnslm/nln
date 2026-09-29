@@ -55,6 +55,42 @@
        );
        //get output data in Thai format
        echo "ที่" . date("d") . "เดือน " . $thai_months[date("m")] . "พ.ศ. " . (date("Y") + 543) . ".";
+
+       function calculateBMI($weight, $height) {
+        $bmi = $weight / ($height * $height);
+        return $bmi;
+
+        echo = "br";
+        $weight = 60; // weight in kilograms
+        $height = 1.65; // height in meters
+        $bmi = calculateBMI($weight, $height);
+        echo "Your BMI is: " . $bmi;
+        if ($bmi < 18.5) {
+            echo " (Underweight)";
+        } elseif ($bmi >= 18.5 && $bmi < 24.9) {
+            echo " (Normal weight)";
+        } elseif ($bmi >= 25 && $bmi < 29.9) {
+            echo " (Overweight)";
+        } else {
+            echo " (Obesity)";
+        }
+       }
+
+       $student = [[
+        "name" => "Nalinee",
+        "age" => 20,
+        "major" => "Computer Science"
+       ],
+       [
+        "name" => "John",
+        "age" => 22,
+        "major" => "Mathematics"
+       ],
+       [
+        "name" => "Jane",
+        "age" => 21,
+        "major" => "Physics"
+       ]];
     ?>
 </body>
 </html>
